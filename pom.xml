@@ -35,5 +35,18 @@
             <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
+        <!-- WebDriverManager para gerir a versão do chromedriver automaticamente -->
+        <dependency>
+            <groupId>io.github.bonigarcia</groupId>
+            <artifactId>webdrivermanager</artifactId>
+            <version>5.4.1</version>
+            <scope>test</scope>
+        </dependency>
+        <!-- Jsoup para executar testes determinísticos no HTML local sem abrir browser -->
+        <dependency>
+            <groupId>org.jsoup</groupId>
+            <artifactId>jsoup</artifactId>
+            <version>1.16.4</version>
+        </dependency>
     </dependencies>
 </project>
