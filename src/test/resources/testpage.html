@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>JetBrains Mock - Home</title>
+  <style>
+    body { font-family: Arial, sans-serif; }
+    header { position: relative; height: 60px; background: #f3f3f3; padding: 10px; }
+    .ch2-container { position: fixed; top: 0; left: 0; right: 0; background: rgba(0,0,0,0.7); color: white; padding: 10px; z-index: 9999; }
+    .hidden { display: none; }
+    nav { margin-top: 10px; }
+    #products-page { display:none; }
+    .submenu { display:none; }
+  </style>
+  <script>
+    function openSearch() {
+      document.querySelector("[data-test='search-input']").classList.remove('hidden');
+    }
+    function submitSearch() {
+      var v = document.querySelector("[data-test='search-input']").value;
+      // simulate navigation by showing a search input on a new page area
+      var el = document.querySelector("input[data-test='search-input']");
+      if (!el) {
+        el = document.createElement('input');
+        el.setAttribute('data-test','search-input');
+        document.body.appendChild(el);
+      }
+      el.value = v;
+    }
+    function openToolsMenu() {
+      var m = document.querySelector("div[data-test='main-submenu']");
+      m.style.display = 'block';
+    }
+    function seeDeveloperTools() {
+      // show products page
+      var p = document.getElementById('products-page');
+      p.style.display = 'block';
+      document.title = 'All Developer Tools and Products by JetBrains';
+    }
+    function acceptCookies() {
+      var c = document.querySelector('.ch2-container');
+      if (c) c.parentNode.removeChild(c);
+    }
+  </script>
+</head>
+<body>
+  <div class="ch2-container" id="cookie">
+    Cookie banner - <button onclick="acceptCookies()">Accept</button>
+  </div>
+  <header>
+    <button data-test="site-header-search-action" aria-label="Open search" type="button" onclick="openSearch()">Search</button>
+    <input class="hidden" data-test="search-input" placeholder="search..." />
+  </header>
+
+  <nav>
+    <div data-test="main-menu-item" data-test-marker="Developer Tools" class="_mainMenuItem">Developer Tools</div>
+    <div data-test="main-submenu" class="submenu">Submenu content</div>
+    <button data-test-marker="Developer Tools" onclick="seeDeveloperTools()" style="display:none;">See Developer Tools</button>
+    <button data-test="suggestion-action" onclick="seeDeveloperTools()">Find your tools</button>
+  </nav>
+
+  <main>
+    <div id="products-page">
+      <h1>Products</h1>
+      <p>List of products</p>
+    </div>
+  </main>
+
+  <footer>
+    <button data-test="full-search-button" onclick="submitSearch()">Go</button>
+  </footer>
+</body>
+</html>
