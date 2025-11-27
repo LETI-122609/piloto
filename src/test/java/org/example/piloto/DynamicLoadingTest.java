@@ -1,4 +1,4 @@
-package org.example.tests;
+package org.example.piloto;
 
 import org.example.pages.DynamicLoadingPage;
 import org.junit.jupiter.api.*;
