@@ -23,6 +23,19 @@ import java.time.Instant;
 import java.util.Arrays;
 import java.util.List;
 
+// Added imports
+import java.util.List;
+import java.util.Arrays;
+import java.util.NoSuchElementException;
+
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriverException;
+import org.openqa.selenium.TimeoutException;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.interactions.Actions;
+
 public class MainPageTest {
     private WebDriver driver;
     private MainPage mainPage;
