@@ -24,13 +24,6 @@
             <version>${selenium.version}</version>
         </dependency>
 
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter</artifactId>
-            <version>${junit.jupiter.version}</version>
-            <scope>test</scope>
-        </dependency>
-
         <!-- Provide a simple SLF4J implementation for test runs to remove the no-provider warning -->
         <dependency>
             <groupId>org.slf4j</groupId>
@@ -46,11 +39,6 @@
         </dependency>
 
         <!-- Add selenium devtools matching the Chromium version to reduce CDP warnings -->
-        <dependency>
-            <groupId>org.seleniumhq.selenium</groupId>
-            <artifactId>selenium-devtools-v142</artifactId>
-            <version>4.25.0</version>
-        </dependency>
 
         <!-- Add a simple SLF4J implementation for test/runtime logging (removes SLF4J no-provider warning) -->
         <dependency>
