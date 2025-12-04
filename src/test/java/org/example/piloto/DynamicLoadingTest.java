@@ -1,6 +1,5 @@
 package org.example.piloto;
 
-import org.example.pages.DynamicLoadingPage;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
