@@ -29,7 +29,7 @@ public class AdicionarCategoriaTest {
         pagina.loginComoAdmin();
         pagina.abrirAdmin();
 
-        String categoria = "Categoria";
+        String categoria = "CategoriaDeTeste";
         pagina.adicionarCategoria(categoria);
 
 
