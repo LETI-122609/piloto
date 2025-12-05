@@ -10,15 +10,11 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.target>21</maven.compiler.target>
         <maven.compiler.source>21</maven.compiler.source>
+        <maven.compiler.target>21</maven.compiler.target>
         <junit.version>5.11.3</junit.version>
         <selenium.version>4.25.0</selenium.version>
         <webdrivermanager.version>5.4.0</webdrivermanager.version>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.target>25</maven.compiler.target>
-        <maven.compiler.source>25</maven.compiler.source>
-        <junit.version>5.11.3</junit.version>
         <aspectj.version>1.9.22.1</aspectj.version>
         <allure.version>2.29.0</allure.version>
     </properties>
@@ -35,12 +31,6 @@
             <artifactId>aspectjweaver</artifactId>
             <version>${aspectj.version}</version>
             <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.codeborne</groupId>
-            <artifactId>selenide</artifactId>
-            <version>7.6.0</version>
-            <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>io.qameta.allure</groupId>
@@ -70,6 +60,14 @@
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
             <version>${selenium.version}</version>
+        </dependency>
+
+        <!-- Selenium DevTools matching Chromium major version to reduce CDP warnings -->
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-devtools-v142</artifactId>
+            <version>${selenium.version}</version>
+            <scope>test</scope>
         </dependency>
 
         <!-- Provide a simple SLF4J implementation for test runs to remove the no-provider warning -->
@@ -120,6 +118,22 @@
             <version>5.4.1</version>
             <scope>test</scope>
         </dependency>
+
+        <!-- TestNG -->
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>7.11.0</version>
+            <scope>test</scope>
+        </dependency>
+
+
+        <dependency>
+            <groupId>com.codeborne</groupId>
+            <artifactId>selenide</artifactId>
+            <version>7.11.0</version> <!-- ou a mais recente -->
+        </dependency>
+
     </dependencies>
 
     <build>
@@ -164,6 +178,14 @@
                     <includes>
                         <include>**/*Test*.java</include>
                     </includes>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.11.0</version>
+                <configuration>
+                    <release>21</release>
                 </configuration>
             </plugin>
         </plugins>
